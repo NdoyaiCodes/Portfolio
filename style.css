@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0d1b2a;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #0d1b2a;
+    margin-top: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.nav ul li a:hover {
+    color: #ff004f !important;
+}
+
+/* Remove border and set color for hamburger icon */
+.navbar-toggler {
+    border: none;
+    color: #0d1b2a;
+}
+
+/* Animate the hamburger icon into an X when menu is open */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+   transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: translateY(0) rotate(-45deg);
+}
+
+/* Animate the transition of the hamburger icon */
+.navbar-toggler .navbar-toggler-icon {
+    transition: all 0.3s ease;
+}
+
+/* Hero section */
+
+.hero-container {
+    padding-top: 70px;
+    align-items: center;
+}
+
+.hero-container h1 {
+    color: white !important;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-container h1 span {
+    color: #ff004f;
+}
+
+/* Hero Section Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+.wrapper .static-txt {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.wrapper .dynamic-txts {
+    margin-left: -20px;
+    line-height: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.dynamic-txts li {
+    list-style: none;
+    color: lime;
+    font-size: 20px;
+    font-weight: 500;
+    top: 0;
+    position: relative;
+    animation: slide 30s steps(5) infinite;
+}
+
+.dynamic-txts li {
+    position: relative;
+}
+
+@keyframes slide {
+    100% {
+        top: -150px;
+    }
+}
+
+.dynamic-txts li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #0d1b2a;
+    animation: typing 6s steps(22) infinite;
+}
+
+@keyframes typing {
+    40%,
+    60% {
+        left: calc(100% + 10px);
+    }
+    100% {
+        left: 0;
+    }
+}
+
+/* Media queries for responsive font size */
+@media (max-width: 576px) {
+    .wrapper .static-txt,
+    .wrapper .dynamic-txts li {
+        font-size: 16px;
+    }
+}
