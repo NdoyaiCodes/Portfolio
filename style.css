@@ -13,7 +13,6 @@ body {
 
 .navbar {
     background-color: #0d1b2a;
-    margin-top: 10px;
 }
 
 .navbar-nav .nav-link {
@@ -25,15 +24,13 @@ body {
     color: #ff004f !important;
 }
 
-/* Remove border and set color for hamburger icon */
 .navbar-toggler {
     border: none;
     color: #0d1b2a;
 }
 
-/* Animate the hamburger icon into an X when menu is open */
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-   transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
@@ -41,7 +38,7 @@ body {
     transform: translateY(0) rotate(-45deg);
 }
 
-/* Animate the transition of the hamburger icon */
+/* Animate transition of the hamburger icon */
 .navbar-toggler .navbar-toggler-icon {
     transition: all 0.3s ease;
 }
@@ -51,6 +48,8 @@ body {
 .hero-container {
     padding-top: 70px;
     align-items: center;
+    opacity: 0;
+    animation: fadeIn 4s ease-in forwards;
 }
 
 .hero-container h1 {
@@ -63,7 +62,7 @@ body {
 }
 
 /* Hero Section Animation */
-@keyframes fadeInUp {
+@keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(50px);
@@ -136,6 +135,88 @@ body {
 @media (max-width: 576px) {
     .wrapper .static-txt,
     .wrapper .dynamic-txts li {
-        font-size: 16px;
+        font-size: 14px;
     }
+}
+
+.button-container {
+    display: flex;
+    size: 25px;
+    gap: 30px;
+}
+
+@media (max-width: 540px) {
+    .button-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.img-fluid {
+    border-radius: 100px;
+}
+
+/*About section*/
+#about {
+    background-image: url('images/Background-Images/2206_w026_n002_2088b_p1_2088.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ensure the background covers the entire height of the viewport */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds viewport height */
+    /* Parallax effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Glass morph effect for p text */
+#about p {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 80%;
+}
+
+/* Glass morph effect for tabs */
+#myTabContent .tab-pane {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 80%;
+}
+
+
+/* Progress bars */
+.progress-bar {
+    height: 20px;
+}
+
+.html-progress-bar {
+    width: 100%;
+    background-color: #007bff;
+}
+
+.css-progress-bar {
+    width: 100%;
+    background-color: #007bff;
+}
+
+.javascript-progress-bar {
+    width: 30%;
+    background-color: #007bff;
+}
+
+.bootstrap-progress-bar {
+    width: 90%;
+    background-color: #007bff;
+}
+
+.tailwind-progress-bar {
+    width: 75%;
+    background-color: #007bff;
 }
