@@ -205,9 +205,14 @@ body {
     #about p,
     .card-body,
     .nav-tabs {
-        background-color: rgba(255, 255, 255, 0.75);
+        background-color: rgba(255, 255, 255, 0.85);
         filter: blur(3px);
     }
+}
+
+#about .text-center {
+    padding: 20px;
+    color: white;
 }
 
 .custom-btn {
@@ -282,12 +287,12 @@ body {
 .certification-item {
     position: relative;
     margin-bottom: 30px;
-    text-align: center; /* Center the content horizontally */
+    text-align: center;
 }
 
 .certification-item img {
-    max-width: 100%; /* Ensure images don't exceed container width */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
 }
 
 .certification-item:hover img {
@@ -348,15 +353,39 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     grid-gap: 1.3rem;
 }
- 
+
+/* Skills Content */
+#skills h3 {
+    color: white !important;
+}
+
+#skills .row-cols-md-3 .col,
+#skills .row-cols-lg-3 .col {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+}
+
+#skills .p-5 {
+    padding: 10px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 576px) {
+    #skills .row-cols-md-3 .col,
+    #skills .row-cols-lg-3 .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
 .skill-icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.55);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     margin-left: 15px;
 }
