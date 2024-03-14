@@ -173,7 +173,6 @@ body {
     background-position: center;
     min-width: 100vw;
     min-height: 100vh;
-    /* Parallax effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -193,7 +192,6 @@ body {
 .card-body,
 .nav-tabs {
     background-color: rgba(255, 255, 255, 0.25);
-    /* Add vendor prefixes for backdrop-filter */
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border-radius: 30px;
@@ -207,79 +205,182 @@ body {
     #about p,
     .card-body,
     .nav-tabs {
-        background-color: rgba(255, 255, 255, 0.75); /* Adjust the opacity if needed */
-        filter: blur(5px); /* Apply blur effect as fallback */
+        background-color: rgba(255, 255, 255, 0.75);
+        filter: blur(3px);
     }
 }
 
+.custom-btn {
+    font-size: 16px;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    border: none;
+}
+
 .nav-tabs {
-    padding: 10px; /* Adjust padding */
+    padding: 10px;
     margin: 10px auto;
     min-width: 100%;
     border-bottom: none;
 }
 
-
-/* Change the color of the tab links */
 .nav-tabs .nav-item .nav-link {
-    color: #ffffff; /* Change to your desired color */
-    background-color: transparent; /* Remove button background */
-    border: none; /* Remove button border */
-    border-bottom: 2px solid transparent; /* Add bottom border */
-    transition: border-color 0.5s; /* Add transition effect for the border */
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.7s;
 }
 
-/* Style the active tab link */
 .nav-tabs .nav-item .nav-link.active {
-    border-color: #ff004f;
+    border-color: lime;
+    width: 100%;
+    display: block;
+    text-align: center;
 }
 
 /* Hover effect for tab links */
 .nav-tabs .nav-item .nav-link:hover {
-    color: #ff004f; /* Change color on hover */
+    color: lime;
 }
 
+/* Target text color for experience and education sections */
+#experience .card-body,
+#education .card-body {
+    color: white;
+    font-size: larger;
+}
+
+/* Target lime color for dates in experience section */
+#experience .text-primary {
+    color: lime !important;
+}
+
+#experience .card-body .text-muted {
+    color: white !important;
+}
+
+#education .text-secondary {
+    color: lime !important;
+}
+
+#education .card-body .text-muted {
+    color: white !important;
+}
+
+/* Certifications Content */
+#certifications {
+    padding: 50px 0;
+}
+
+.row-cols-2 .col,
+.row-cols-md-3 .col,
+.row-cols-lg-3 .col {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+}
+
+.certification-item {
+    position: relative;
+    margin-bottom: 30px;
+    text-align: center; /* Center the content horizontally */
+}
+
+.certification-item img {
+    max-width: 100%; /* Ensure images don't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.certification-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 576px) {
+    .row-cols-md-3 .col,
+    .row-cols-lg-3 .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 576px) {
+    .row-cols-md-3 .col,
+    .row-cols-lg-3 .col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .row-cols-lg-3 .col {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+
+    .certification-item {
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .certification-item {
+        margin-bottom: 30px;
+    }
+}
 
 /*Icons*/
 .experience-icon {
-    width: 50px; /* Adjust the width as needed */
-    height: 50px; /* Adjust the height as needed */
-    margin-bottom: 10px; /* Add margin at the bottom */
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
 }
 
 /* Media query for smaller screens */
 @media (max-width: 576px) {
     .experience-icon {
-        width: 40px; /* Adjust the width for smaller screens */
-        height: 40px; /* Adjust the height for smaller screens */
+        width: 40px;
+        height: 40px;
     }
 }
-
-/* Apply glass morph effect to skill icons */
+.row-cols-md-4,
+.row-cols-lg-5 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 1.3rem;
+}
+ 
 .skill-icon {
-    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
-    width: 50px; /* Adjust width as needed */
-    height: 50px; /* Adjust height as needed */
-    margin: auto;
+    align-items: center;
+    width: 80px;
+    height: 80px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    border-radius: 10px;
+    margin-left: 15px;
+}
+
+.skill-icon img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /* Media queries for smaller screens */
 @media (max-width: 576px) {
-    .row-cols-md-3 {
-        column-count: 3; /* Change to a single column for smaller screens */
+    .row-cols-md-4 {
+        column-count: 2;
+        margin-left: 2px;
     }
 }
 
 /* Media queries for larger screens */
 @media (min-width: 768px) {
-    .row-cols-md-3 {
-        column-count: 4; /* Change to a 2x2 grid for larger screens */
+    .row-cols-md-4 {
+        column-count: 3;
+    }
+
+    .row-cols-lg-5 {
+        column-count: 4;
     }
 }
