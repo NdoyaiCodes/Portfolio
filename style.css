@@ -5,10 +5,20 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Set maximum width for content */
+.container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 body {
     background-color: #0d1b2a;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -161,62 +171,115 @@ body {
     background-image: url('images/Background-Images/2206_w026_n002_2088b_p1_2088.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Ensure the background covers the entire height of the viewport */
-    overflow-y: auto; /* Enable vertical scrolling if content exceeds viewport height */
+    min-width: 100vw;
+    min-height: 100vh;
     /* Parallax effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 50px;
+}
+
+#about h1 {
+    margin-top: 16px;
+    color: lime;
+    font-size: 40px;
 }
 
 /* Glass morph effect for p text */
-#about p {
+/*About section*/
+#about p,
+.card-body,
+.nav-tabs {
     background-color: rgba(255, 255, 255, 0.25);
+    /* Add vendor prefixes for backdrop-filter */
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
+    border-radius: 30px;
+    padding: 10px;
+    margin: 10px auto;
+    min-width: 100%;
+}
+
+/* Fallback for browsers that do not support backdrop-filter */
+@media (prefers-reduced-motion: reduce) {
+    #about p,
+    .card-body,
+    .nav-tabs {
+        background-color: rgba(255, 255, 255, 0.75); /* Adjust the opacity if needed */
+        filter: blur(5px); /* Apply blur effect as fallback */
+    }
+}
+
+.nav-tabs {
+    padding: 10px; /* Adjust padding */
+    margin: 10px auto;
+    min-width: 100%;
+    border-bottom: none;
+}
+
+
+/* Change the color of the tab links */
+.nav-tabs .nav-item .nav-link {
+    color: #ffffff; /* Change to your desired color */
+    background-color: transparent; /* Remove button background */
+    border: none; /* Remove button border */
+    border-bottom: 2px solid transparent; /* Add bottom border */
+    transition: border-color 0.5s; /* Add transition effect for the border */
+}
+
+/* Style the active tab link */
+.nav-tabs .nav-item .nav-link.active {
+    border-color: #ff004f;
+}
+
+/* Hover effect for tab links */
+.nav-tabs .nav-item .nav-link:hover {
+    color: #ff004f; /* Change color on hover */
+}
+
+
+/*Icons*/
+.experience-icon {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    margin-bottom: 10px; /* Add margin at the bottom */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 576px) {
+    .experience-icon {
+        width: 40px; /* Adjust the width for smaller screens */
+        height: 40px; /* Adjust the height for smaller screens */
+    }
+}
+
+/* Apply glass morph effect to skill icons */
+.skill-icon {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    margin: auto;
     border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 80%;
-}
-
-/* Glass morph effect for tabs */
-#myTabContent .tab-pane {
-    background-color: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 80%;
 }
 
-
-/* Progress bars */
-.progress-bar {
-    height: 20px;
+/* Media queries for smaller screens */
+@media (max-width: 576px) {
+    .row-cols-md-3 {
+        column-count: 3; /* Change to a single column for smaller screens */
+    }
 }
 
-.html-progress-bar {
-    width: 100%;
-    background-color: #007bff;
-}
-
-.css-progress-bar {
-    width: 100%;
-    background-color: #007bff;
-}
-
-.javascript-progress-bar {
-    width: 30%;
-    background-color: #007bff;
-}
-
-.bootstrap-progress-bar {
-    width: 90%;
-    background-color: #007bff;
-}
-
-.tailwind-progress-bar {
-    width: 75%;
-    background-color: #007bff;
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+    .row-cols-md-3 {
+        column-count: 4; /* Change to a 2x2 grid for larger screens */
+    }
 }
