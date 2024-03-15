@@ -210,10 +210,27 @@ body {
     }
 }
 
+/* Default styles for paragraph text */
 #about .text-center {
     padding: 20px;
     color: white;
+    font-size: 16px; /* Default font size */
 }
+
+/* Media query for medium (md) screens */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #about .text-center {
+        font-size: 18px; /* Adjust font size for md screens */
+    }
+}
+
+/* Media query for large (lg) screens */
+@media (min-width: 992px) {
+    #about .text-center {
+        font-size: 20px; /* Adjust font size for lg screens */
+    }
+}
+
 
 .custom-btn {
     font-size: 16px;
