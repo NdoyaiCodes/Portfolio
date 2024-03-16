@@ -15,14 +15,14 @@
 }
 
 body {
-    background-color: #0d1b2a;
+    background-image: linear-gradient(to bottom, #0f052f, #0e0c35, #0c113b, #0b1542, #091948, #0d1c50, #122057, #17235f, #252569, #342773, #43287c, #532884);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
 .navbar {
-    background-color: #0d1b2a;
+    background-color: #0f052f;
 }
 
 .navbar-nav .nav-link {
@@ -127,7 +127,7 @@ body {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #0d1b2a;
+    background-color:#0f052f;
     animation: typing 6s steps(22) infinite;
 }
 
